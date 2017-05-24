@@ -1,5 +1,8 @@
 # smaze adresar se zdrojovymi soubory projektu
-folder="/home/xholop/projekty/$1"
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+folder="$HOME/projekty/$1"
 sudo rm -rf $folder
 
 # vymaze projekt z hosts souboru
@@ -14,4 +17,4 @@ sudo rm /etc/apache2/sites-available/$1.localhost.conf
 # reload sluzby apache
 sudo service apache2 reload
 
-echo "Projekt $1.localhost byl smazan, vcetne slozky $folder"
+echo "Projekt ${bold}$1.localhost${normal} byl smazan, vcetne slozky ${bold}$folder${normal}"
